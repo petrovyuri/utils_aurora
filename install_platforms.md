@@ -7,11 +7,10 @@
 ## Создание нового пользователя dev
 ```shell
 useradd -m dev
+usermod -aG sudo dev
+passwd dev
 ```
-## Добавление пользователя dev в группу Sudo
-```shell
-usermod -aG sudo myuser
-```
+
 ## Переключение на пользователь dev
 ```shell
 su dev
