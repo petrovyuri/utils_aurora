@@ -132,10 +132,20 @@ exit
 ```shell 
 sb2-config -d Aurora_OS-4.0.2.249-armv7hl
 ```
-#### Установка зависимостей
+#### Переход в папку с артифактами
 ```shell 
 cd ~/.local/opt/flutter/bin/cache/artifacts/aurora/arm 
 sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
 sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/*.rpm 
 sdk-assistant target remove --snapshots-of Aurora_OS-4.0.2.249-armv7hl 
 ```
+#### Установка зависимостей
+```shell 
+sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
+sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/*.rpm 
+```
+#### Очистка
+```shell 
+sdk-assistant target remove --snapshots-of Aurora_OS-4.0.2.249-armv7hl 
+```
+
