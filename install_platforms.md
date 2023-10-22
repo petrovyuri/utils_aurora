@@ -55,7 +55,7 @@ flutter-aurora doctor
 ```shell
 mkdir -pv $HOME/AuroraPlatformSDK/tarballs
 mkdir -pv $HOME/AuroraPlatformSDK/sdks/aurora_psdk
-mkdir -pv $HOME/AuroraPlatformSDK/projects
+```
 
 #### Инициализация переменных для скачивание
 ```shell
@@ -63,12 +63,6 @@ URL_CHROOT="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2
 URL_TOOLING="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_SDK_Tooling-i486.tar.bz2"
 URL_TARGET_ARM="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_SDK_Target-armv7hl.tar.bz2"
 NAME=$(basename $URL_TOOLING | sed s/.tar.[a-z]*[0-9]*//g | sed s/-base-Aurora_SDK_Tooling-i486//g )
-```
-
-#### Создание папок
-```shell
-mkdir -pv $HOME/AuroraPlatformSDK/tarballs
-mkdir -pv $HOME/AuroraPlatformSDK/sdks/aurora_psdk
 ```
 
 #### Скачивание зависимостей
