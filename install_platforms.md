@@ -14,6 +14,7 @@ passwd dev
 ## Переключение на пользователь dev
 ```shell
 su dev
+bash
 ```
 
 
