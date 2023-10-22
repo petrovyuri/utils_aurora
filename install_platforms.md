@@ -136,3 +136,9 @@ $PSDK_DIR/sdk-chroot \
 ```shell
 bash
 ```
+#### Обновление таргета
+```shell
+sudo zypper ref
+sb2 -t AuroraOS-4.0.2.89-base-armv7hl -m sdk-install -R
+zypper refresh
+```
