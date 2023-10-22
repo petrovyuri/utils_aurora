@@ -95,11 +95,11 @@ aurora_psdk
 
 #### Установка инструментов
 ```shell
-$PSDK_DIR/sdk-chroot sdk-assistant tooling create \
+sdk-assistant tooling create \
   $NAME \
   $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Tooling-i486.tar.bz2
 
-$PSDK_DIR/sdk-chroot sdk-assistant target create \
+sdk-assistant target create \
   $NAME-armv7hl \
   $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Target-armv7hl.tar.bz2
 ```
@@ -114,18 +114,13 @@ if [ ! -d "platform-sdk" ]; then
   rm -rf ./flutter
 fi
 
-$PSDK_DIR/sdk-chroot \
-  sb2-config -d \
-  $TARGET
+sb2-config -d $TARGET
 
-$PSDK_DIR/sdk-chroot \
-  sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm
+sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm
 
-$PSDK_DIR/sdk-chroot \
-  sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/*.rpm
+sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/*.rpm
 
-$PSDK_DIR/sdk-chroot \
-  sdk-assistant target remove --snapshots-of $TARGET
+sdk-assistant target remove --snapshots-of $TARGET
 ```
 
 #### Обновление таргета
