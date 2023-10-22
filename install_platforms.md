@@ -26,7 +26,7 @@ sudo apt-get update
 ```
 #### Получение зависимостей
 ```shell
-sudo apt-get install curl git git-lfs unzip bzip2
+sudo apt-get install curl git git-lfs unzip bzip2 -y
 ```
 #### Создание локальной папки для хранения Flutter
 ```shell
@@ -78,7 +78,6 @@ fi
 if [ ! -f "$HOME/AuroraPlatformSDK/tarballs/$(basename $URL_TARGET_ARM)" ]; then
     wget "$URL_TARGET_ARM" -P "$HOME/AuroraPlatformSDK/tarballs/"
 fi
-
 ```
 
 #### Добавление путей в PATH
