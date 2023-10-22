@@ -1,7 +1,8 @@
 # Установка Platform SDK + Flutter Aurora на Linux (Ubuntu)
 
 [Flutter aurora](https://gitlab.com/omprussia/flutter/flutter)
- [Platform SDK](https://developer.auroraos.ru/doc/software_development/psdk/setup)
+[Platform SDK](https://developer.auroraos.ru/doc/software_development/psdk/setup)
+[Что такого WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
 
 ## Создание нового пользователя dev
 ```shell
