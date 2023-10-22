@@ -1,11 +1,13 @@
 # Установка Platform SDK + Flutter Aurora на Linux (Ubuntu)
 
 [Flutter aurora](https://gitlab.com/omprussia/flutter/flutter)
+
 [Platform SDK](https://developer.auroraos.ru/doc/software_development/psdk/setup)
+
 [Что такого WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
 
 
-## Установка Flutter Aurora
+### Установка Flutter Aurora
 
 #### Обновление зависимостей
 ```shell
@@ -74,7 +76,7 @@ export CHROOT_IMG=$(find $HOME/AuroraPlatformSDK/tarballs -iname "*chroot*")
 sudo tar --numeric-owner -p -xjf $CHROOT_IMG --checkpoint=.1000 -C $PSDK_DIR
 ```
 
-#### Добавление путей в PATH
+#### Добавление в PATH
 ```shell
 if [[ -z $(grep "AuroraPlatformSDK" ~/.bashrc) ]]; then
   echo 'export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk' >> $HOME/.bashrc
@@ -87,7 +89,7 @@ fi
 echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
 ```
 
-#### Установка инструментов
+#### Распаковка инструментов и таргетов
 ```shell
 $PSDK_DIR/sdk-chroot sdk-assistant tooling create \
   $NAME \
