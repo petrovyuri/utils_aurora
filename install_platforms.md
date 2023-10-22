@@ -42,6 +42,7 @@ flutter-aurora doctor
 ```shell
 mkdir -pv $HOME/AuroraPlatformSDK/tarballs
 mkdir -pv $HOME/AuroraPlatformSDK/sdks/aurora_psdk
+mkdir -pv $HOME/AuroraPlatformSDK/targets
 ```
 
 #### Инициализация переменных для скачивание
