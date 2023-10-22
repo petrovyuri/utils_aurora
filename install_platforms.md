@@ -116,7 +116,6 @@ sudo zypper ref
 #### Переход в таргет с правами Root
 ```shell
 sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R
-zypper refresh
 ```
 
 #### Обновление таргета
