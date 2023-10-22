@@ -80,6 +80,11 @@ fi
 
 echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
 ```
+#### Активация $PSDK_DIR/sdk-chroot
+```shell
+$PSDK_DIR/sdk-chroot
+```
+
 #### Установка Platform SDK
 ```shell
 export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk
@@ -93,9 +98,8 @@ $PSDK_DIR/sdk-chroot sdk-assistant tooling create \
 $PSDK_DIR/sdk-chroot sdk-assistant target create \
   $NAME-armv7hl \
   $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Target-armv7hl.tar.bz2
-
-$PSDK_DIR/sdk-chroot sdk-assistant list
 ```
+
 #### Установка таргетов
 ```shell
 TARGET="$NAME-armv7hl"
