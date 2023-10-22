@@ -68,6 +68,14 @@ if [ ! -f "$HOME/AuroraPlatformSDK/tarballs/$(basename $URL_TARGET_ARM)" ]; then
 fi
 ```
 
+#### Распаковка SDK
+```shell
+export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk
+export CHROOT_IMG=$(find $HOME/AuroraPlatformSDK/tarballs -iname "*chroot*")
+
+sudo tar --numeric-owner -p -xjf $CHROOT_IMG --checkpoint=.1000 -C $PSDK_DIR
+```
+
 #### Добавление путей в PATH
 ```shell
 if [[ -z $(grep "AuroraPlatformSDK" ~/.bashrc) ]]; then
@@ -85,12 +93,8 @@ echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
 $PSDK_DIR/sdk-chroot
 ```
 
-#### Установка Platform SDK
+#### Установка инструментов
 ```shell
-export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk
-export CHROOT_IMG=$(find $HOME/AuroraPlatformSDK/tarballs -iname "*chroot*")
-
-sudo tar --numeric-owner -p -xjf $CHROOT_IMG --checkpoint=.1000 -C $PSDK_DIR
 $PSDK_DIR/sdk-chroot sdk-assistant tooling create \
   $NAME \
   $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Tooling-i486.tar.bz2
