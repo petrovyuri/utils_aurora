@@ -74,6 +74,7 @@ export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk
 export CHROOT_IMG=$(find $HOME/AuroraPlatformSDK/tarballs -iname "*chroot*")
 
 sudo tar --numeric-owner -p -xjf $CHROOT_IMG --checkpoint=.1000 -C $PSDK_DIR
+exec bash
 ```
 
 #### Добавление в PATH
