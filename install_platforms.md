@@ -51,6 +51,12 @@ flutter-aurora doctor
 
 ## Установка Platform SDK
 
+#### Создание папок
+```shell
+mkdir -pv $HOME/AuroraPlatformSDK/tarballs
+mkdir -pv $HOME/AuroraPlatformSDK/sdks/aurora_psdk
+mkdir -pv $HOME/AuroraPlatformSDK/projects
+
 #### Инициализация переменных для скачивание
 ```shell
 URL_CHROOT="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_Platform_SDK_Chroot-i486.tar.bz2"
@@ -58,30 +64,29 @@ URL_TOOLING="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.
 URL_TARGET_ARM="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_SDK_Target-armv7hl.tar.bz2"
 NAME=$(basename $URL_TOOLING | sed s/.tar.[a-z]*[0-9]*//g | sed s/-base-Aurora_SDK_Tooling-i486//g )
 ```
-#### Скачивание зависимостей
-```shell
-if [ ! -f $(basename $URL_CHROOT) ]; then
-  wget $URL_CHROOT
-fi
 
-if [ ! -f $(basename $URL_TOOLING) ]; then
-  wget $URL_TOOLING
-fi
-
-if [ ! -f $(basename $URL_TARGET_ARM) ]; then
-  wget $URL_TARGET_ARM
-fi
-```
 #### Создание папок
 ```shell
 mkdir -pv $HOME/AuroraPlatformSDK/tarballs
 mkdir -pv $HOME/AuroraPlatformSDK/sdks/aurora_psdk
-mkdir -pv $HOME/AuroraPlatformSDK/projects
 ```
-#### Переходим в папку для установки
+
+#### Скачивание зависимостей
 ```shell
-cp -v $(pwd)/Aurora_OS-*.bz2 $HOME/AuroraPlatformSDK/tarballs
+if [ ! -f "$HOME/AuroraPlatformSDK/tarballs/$(basename $URL_TOOLING)" ]; then
+    wget "$URL_TOOLING" -P "$HOME/AuroraPlatformSDK/tarballs/"
+fi
+
+if [ ! -f "$HOME/AuroraPlatformSDK/tarballs/$(basename $URL_CHROOT)" ]; then
+    wget "$URL_CHROOT" -P "$HOME/AuroraPlatformSDK/tarballs/"
+fi
+
+if [ ! -f "$HOME/AuroraPlatformSDK/tarballs/$(basename $URL_TARGET_ARM)" ]; then
+    wget "$URL_TARGET_ARM" -P "$HOME/AuroraPlatformSDK/tarballs/"
+fi
+
 ```
+
 #### Добавление путей в PATH
 ```shell
 if [[ -z $(grep "AuroraPlatformSDK" ~/.bashrc) ]]; then
@@ -133,12 +138,14 @@ $PSDK_DIR/sdk-chroot \
 $PSDK_DIR/sdk-chroot \
   sdk-assistant target remove --snapshots-of $TARGET
 ```
-```shell
-bash
-```
+
 #### Обновление таргета
 ```shell
 sudo zypper ref
 sb2 -t AuroraOS-4.0.2.89-base-armv7hl -m sdk-install -R
-zypper refresh
+sudo zypper refresh
+```
+
+```shell
+bash
 ```
