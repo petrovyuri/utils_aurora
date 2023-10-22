@@ -47,9 +47,10 @@ mkdir -pv $HOME/AuroraPlatformSDK/targets
 
 #### Инициализация переменных для скачивание
 ```shell
-URL_CHROOT="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_Platform_SDK_Chroot-i486.tar.bz2"
-URL_TOOLING="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_SDK_Tooling-i486.tar.bz2"
-URL_TARGET_ARM="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/Aurora_OS-4.0.2.249-base-Aurora_SDK_Target-armv7hl.tar.bz2"
+PLATFORM_SDK="Aurora_OS-4.0.2.249"
+URL_CHROOT="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/$PLATFORM_SDK-base-Aurora_Platform_SDK_Chroot-i486.tar.bz2"
+URL_TOOLING="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/$PLATFORM_SDK-base-Aurora_SDK_Tooling-i486.tar.bz2"
+URL_TARGET_ARM="https://sdk-repo.omprussia.ru/sdk/installers/4.0.2/PlatformSDK/4.0.2.249/$PLATFORM_SDK-base-Aurora_SDK_Target-armv7hl.tar.bz2"
 NAME=$(basename $URL_TOOLING | sed s/.tar.[a-z]*[0-9]*//g | sed s/-base-Aurora_SDK_Tooling-i486//g )
 ```
 
@@ -108,6 +109,10 @@ aurora_psdk
 ```shell
 sdk-assistant list
 ```
+#### Инициализация переменной таргета
+```shell
+TARGET="Aurora_OS-4.0.2.249-armv7hl"
+```
 
 #### Обновление данных
 ```shell
@@ -115,7 +120,7 @@ sudo zypper ref
 ```
 #### Переход в таргет с правами Root
 ```shell
-sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R
+sb2 -t  $TARGET -m sdk-install -R
 ```
 
 #### Обновление таргета
@@ -130,22 +135,19 @@ exit
 
 #### Установка таргетов по умолчанию
 ```shell 
-sb2-config -d Aurora_OS-4.0.2.249-armv7hl
+sb2-config -d $TARGET
 ```
 #### Переход в папку с артифактами
 ```shell 
 cd ~/.local/opt/flutter/bin/cache/artifacts/aurora/arm 
-sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
-sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/*.rpm 
-sdk-assistant target remove --snapshots-of Aurora_OS-4.0.2.249-armv7hl 
 ```
 #### Установка зависимостей
 ```shell 
-sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
-sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/*.rpm 
+sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
+sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/*.rpm 
 ```
 #### Очистка
 ```shell 
-sdk-assistant target remove --snapshots-of Aurora_OS-4.0.2.249-armv7hl 
+sdk-assistant target remove --snapshots-of $TARGET
 ```
 
