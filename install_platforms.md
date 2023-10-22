@@ -4,19 +4,6 @@
 [Platform SDK](https://developer.auroraos.ru/doc/software_development/psdk/setup)
 [Что такого WSL](https://learn.microsoft.com/en-us/windows/wsl/about)
 
-## Создание нового пользователя dev
-```shell
-useradd -m dev
-usermod -aG sudo dev
-passwd dev
-```
-
-## Переключение на пользователь dev
-```shell
-su dev
-bash
-```
-
 
 ## Установка Flutter Aurora
 
