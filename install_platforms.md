@@ -22,9 +22,7 @@ mkdir -p ~/.local/opt
 #### Копирование Flutter на компьютер
 ```shell
 git clone https://gitlab.com/omprussia/flutter/flutter.git ~/.local/opt/flutter
-
 echo "alias flutter-aurora=$HOME/.local/opt/flutter/bin/flutter" >> ~/.bashrc
-
 exec bash  
 ``` 
 #### Активация Flutter Авроры
@@ -88,48 +86,47 @@ fi
 
 echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
 ```
-#### Активация $PSDK_DIR/sdk-chroot
+
+#### Установка инструментов
+```shell
+$PSDK_DIR/sdk-chroot sdk-assistant tooling create \
+  $NAME \
+  $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Tooling-i486.tar.bz2 -y
+
+$PSDK_DIR/sdk-chroot sdk-assistant target create \
+  $NAME-armv7hl \
+  $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Target-armv7hl.tar.bz2 -y
+```
+#### Активация SDK
 ```shell
 aurora_psdk
 ```
 
-#### Установка инструментов
+#### Список таргетов
 ```shell
-sdk-assistant tooling create \
-  $NAME \
-  $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Tooling-i486.tar.bz2
-
-sdk-assistant target create \
-  $NAME-armv7hl \
-  $HOME/AuroraPlatformSDK/tarballs/$NAME-base-Aurora_SDK_Target-armv7hl.tar.bz2
+sdk-assistant list
 ```
 
 #### Установка таргетов
 ```shell
-TARGET="$NAME-armv7hl"
-
-if [ ! -d "platform-sdk" ]; then
-  git clone git@gitlab.com:omprussia/flutter/flutter.git
-  mv ./flutter/bin/cache/artifacts/aurora/arm/platform-sdk ./platform-sdk
-  rm -rf ./flutter
-fi
-
-sb2-config -d $TARGET
-
-sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm
-
-sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/*.rpm
-
-sdk-assistant target remove --snapshots-of $TARGET
-```
-
-#### Обновление таргета
-```shell
 sudo zypper ref
-sb2 -t AuroraOS-4.0.2.89-base-armv7hl -m sdk-install -R
-sudo zypper refresh
+sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R
+zypper refresh
 ```
 
+#### Выход из таргета
 ```shell
-bash
+exit
+```
+
+#### Установка таргетов по умолчанию
+```shell 
+sb2-config -d Aurora_OS-4.0.2.249-armv7hl
+```
+#### Установка зависимостей
+```shell 
+cd ~/.local/opt/flutter/bin/cache/artifacts/aurora/arm 
+sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
+sb2 -t Aurora_OS-4.0.2.249-armv7hl -m sdk-install -R zypper in platform-sdk/*.rpm 
+sdk-assistant target remove --snapshots-of Aurora_OS-4.0.2.249-armv7hl 
 ```
