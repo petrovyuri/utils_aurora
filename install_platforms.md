@@ -72,9 +72,7 @@ fi
 ```shell
 export PSDK_DIR=$HOME/AuroraPlatformSDK/sdks/aurora_psdk
 export CHROOT_IMG=$(find $HOME/AuroraPlatformSDK/tarballs -iname "*chroot*")
-
 sudo tar --numeric-owner -p -xjf $CHROOT_IMG --checkpoint=.1000 -C $PSDK_DIR
-exec bash
 ```
 
 #### Добавление в PATH
@@ -88,6 +86,7 @@ if [[ -z $(grep "alias aurora_psdk" ~/.bashrc) ]]; then
 fi
 
 echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
+exec bash
 ```
 
 #### Распаковка инструментов и таргетов
