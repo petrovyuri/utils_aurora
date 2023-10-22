@@ -13,7 +13,7 @@ sudo apt-get update
 ```
 #### Получение зависимостей
 ```shell
-sudo apt-get install curl git git-lfs unzip bzip2 -y
+sudo apt-get install curl git git-lfs unzip bzip2
 ```
 #### Создание локальной папки для хранения Flutter
 ```shell
@@ -90,7 +90,7 @@ echo 'PS1="[AuroraPlatformSDK]$ "' > ~/.mersdk.profile
 ```
 #### Активация $PSDK_DIR/sdk-chroot
 ```shell
-$PSDK_DIR/sdk-chroot
+aurora_psdk
 ```
 
 #### Установка инструментов
