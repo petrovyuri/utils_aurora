@@ -144,10 +144,17 @@ cd ~/.local/opt/flutter/bin/cache/artifacts/aurora/arm
 #### Установка зависимостей
 ```shell 
 sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/compatibility/*.rpm 
+```
+#### Установка зависимостей
+```shell 
 sb2 -t $TARGET -m sdk-install -R zypper in platform-sdk/*.rpm 
 ```
+
 #### Очистка
 ```shell 
 sdk-assistant target remove --snapshots-of $TARGET
 ```
-
+#### Выход из SDK
+```shell
+exit
+```
