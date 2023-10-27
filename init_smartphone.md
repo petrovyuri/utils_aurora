@@ -26,6 +26,13 @@ ssh defaultuser@192.168.2.15
 ```
 Вводим пароль который вы установили в режиме разработчика
 
+#### Переход в режим ROOT 
+Так, как в этом режиме вы получаете полный доступ. Будьте аккуратны, что бы не поломать смартфон.
+```shell
+devel-su
+```
+Вводим пароль который вы установили в при активации терминала
+
 #### Установка первого пакета
 ```shell
 pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
@@ -34,6 +41,7 @@ pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-inputco
 ```shell
 pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
 ```
+
 Выходим.
 ```shell
 exit
