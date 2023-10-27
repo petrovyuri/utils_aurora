@@ -22,7 +22,7 @@ scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility
 
 #### Подключение к телефону через ssh
 ```shell
-defaultuser@192.168.2.15
+ssh defaultuser@192.168.2.15
 ```
 Вводим пароль который вы установили в режиме разработчика
 
