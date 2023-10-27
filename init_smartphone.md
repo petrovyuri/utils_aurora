@@ -28,9 +28,9 @@ ssh defaultuser@192.168.2.15
 
 #### Переходим в рут
 ```shell
-pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-inputcontext-0.99.1%252Bgit12-1.7.25.omp.armv7hl.rpm -y
+pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
 
-pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-0.99.1%252Bgit12-1.7.25.omp.armv7hl.rpm -y
+pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
 ```
 Выходим.
 ```shell
