@@ -15,9 +15,9 @@ https://developer.auroraos.ru/doc/software_development/sdk/device
 
 #### Копирование файлов в папку Downloads в смартфоне
 ```shell
-scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-0.99.1%252Bgit12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
+scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
 
-scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-inputcontext-0.99.1%252Bgit12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
+scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
 ```
 
 #### Подключение к телефону через ssh
