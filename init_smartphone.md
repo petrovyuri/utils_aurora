@@ -26,10 +26,12 @@ ssh defaultuser@192.168.2.15
 ```
 Вводим пароль который вы установили в режиме разработчика
 
-#### Переходим в рут
+#### Установка первого пакета
 ```shell
 pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
-
+```
+#### Установка первого пакета
+```shell
 pkcon install-local /home/defaultuser/Downloads/maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm -y
 ```
 Выходим.
