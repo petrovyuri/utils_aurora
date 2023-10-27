@@ -13,10 +13,12 @@ https://developer.auroraos.ru/doc/software_development/sdk/device
 **maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm**
 **maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm**
 
-#### Копирование файлов в папку Downloads в смартфоне
+#### Копирование файлов в папку Downloads в смартфоне 1-го файла
 ```shell
 scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-0.99.1+git12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
-
+```
+#### Копирование файлов в папку Downloads в смартфоне 2-го файла
+```shell
 scp $HOME/.local/opt/flutter/bin/cache/artifacts/aurora/arm/device/compatibility/maliit-framework-wayland-inputcontext-0.99.1+git12-1.7.25.omp.armv7hl.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
 ```
 
