@@ -1,13 +1,9 @@
-<!-- # Установка приложения на Аврору
+# Установка приложения на Аврору
 
-#### Обновление зависимостей
+#### Сборка приложения
 ```shell
 flutter-aurora build aurora --release
 ```
-
-
-
-
 
 #### Для удобства, копируете полную ссылку на файл RPM
 Данная файл, это и есть ваше приложение. Расширение файла .rpm.
@@ -18,7 +14,7 @@ com.example.mobile-0.1.0-1.armv7hl.rpm
 
 #### Инициализируем переменную  
 ```shell
-PATH_TO_APP=
+PATH_TO_APP= 
 ```
 
 #### Подпись приложения
@@ -29,4 +25,20 @@ https://developer.auroraos.ru/doc/software_development/guides/package_signing#pu
 ```shell
 aurora_psdk rpmsign-external sign --key $HOME/sign/regular_key.pem --cert $HOME/sign/regular_cert.pem $PATH_TO_APP
 ```
- -->
+
+#### Копирование приложения в смартфон
+```shell
+scp $PATH_TO_APP  defaultuser@192.168.2.15:/home/defaultuser/Downloads
+```
+
+#### Переход в режим ROOT 
+Так, как в этом режиме вы получаете полный доступ. Будьте аккуратны, что бы не поломать смартфон.
+```shell
+devel-su
+```
+Вводим пароль который вы установили в при активации терминала
+
+#### Установка пакета
+```shell
+pkcon install-local /home/defaultuser/Downloads/*.rpm -y
+```
