@@ -1,5 +1,30 @@
 # Установка приложения на Аврору
 
+#### Установка редактора nano
+```shell
+sudo apt-get install nano
+```
+
+#### Так как сборка выполняется в консоли, не всегда удобно каждый раз вводить пароль вручную. Для решения этой проблемы нужно добавить следующие файлы в директорию /etc/sudoers.d, они позволят работать с Platform SDK без ввода пароля суперпользователя.
+
+```shell
+sudo nano mer-sdk-chroot
+```
+
+Добавляем туда:
+dev ALL=(ALL) NOPASSWD: /home/dev/AuroraPlatformSDK/sdks/aurora_psdk/mer-sdk-chroot  
+Defaults!/home/dev/AuroraPlatformSDK/sdks/aurora_psdk/mer-sdk-chroot env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"  
+
+#### Создаем еще один
+```shell
+sudo nano sdk-chroot
+```
+Добавляем туда:
+dev ALL=(ALL) NOPASSWD: /home/dev/AuroraPlatformSDK/sdks/aurora_psdk/sdk-chroot  
+Defaults!/home/dev/AuroraPlatformSDK/sdks/aurora_psdk/sdk-chroot env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"  
+
+После этого, вам не надо будет вводить пароль суперпользователя для сборки
+
 #### Создание приложения для Авроры
 ```shell
 flutter-aurora create --platforms=aurora --template=app --org=com.example example
