@@ -1,5 +1,15 @@
 # Установка приложения на Аврору
 
+#### Создание приложения для Авроры
+```shell
+flutter-aurora create --platforms=aurora --template=app --org=com.example example .
+```
+
+#### Добавление поддержки Авроры
+```shell
+flutter-aurora create --platforms=aurora --org=com.example .
+```
+
 #### Сборка приложения
 ```shell
 flutter-aurora build aurora --release
