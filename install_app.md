@@ -58,12 +58,17 @@ https://developer.auroraos.ru/doc/software_development/guides/package_signing#pu
 
 После того, как скачали сертификат и ключ, ложите их в папку sign в корневой каталог пользователя. Далее подписываем приложение командой:
 ```shell
-aurora_psdk rpmsign-external sign --key $HOME/sign/regular_key.pem --cert $HOME/sign/regular_cert.pem $PATH_TO_APP
+aurora_psdk rpmsign-external sign --key <ПУТЬ к КЛЮЧУ> --cert <ПУТЬ к СЕРТИФИКАТУ> $PATH_TO_APP
 ```
 
 #### Копирование приложения в смартфон
 ```shell
 scp $PATH_TO_APP  defaultuser@192.168.2.15:/home/defaultuser/Downloads
+```
+
+#### Подключение к смартфону
+```shell
+ssh defaultuser@192.168.2.15
 ```
 
 #### Переход в режим ROOT 
