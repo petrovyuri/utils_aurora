@@ -12,6 +12,7 @@ sudo nano mer-sdk-chroot
 ```
 
 Добавляем туда:
+
 dev ALL=(ALL) NOPASSWD: /home/dev/AuroraPlatformSDK/sdks/aurora_psdk/mer-sdk-chroot  
 Defaults!/home/dev/AuroraPlatformSDK/sdks/aurora_psdk/mer-sdk-chroot env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"  
 
@@ -20,6 +21,7 @@ Defaults!/home/dev/AuroraPlatformSDK/sdks/aurora_psdk/mer-sdk-chroot env_keep +=
 sudo nano sdk-chroot
 ```
 Добавляем туда:
+
 dev ALL=(ALL) NOPASSWD: /home/dev/AuroraPlatformSDK/sdks/aurora_psdk/sdk-chroot  
 Defaults!/home/dev/AuroraPlatformSDK/sdks/aurora_psdk/sdk-chroot env_keep += "SSH_AGENT_PID SSH_AUTH_SOCK"  
 
