@@ -7,6 +7,7 @@ https://gitlab.com/omprussia/flutter/flutter-plugins
 #### Переходим в папку example и запускаем кодогенерацию
 ```shell
 cd example
+flutter-aurora pub get
 dart run build_runner build --delete-conflicting-outputs
 ```
 #### Сборка приложения в режиме DEBUG
