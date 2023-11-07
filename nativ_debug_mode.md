@@ -75,7 +75,7 @@ set remote exec-file /usr/bin/ru.auroraos.flutter_example_packages
             "program": "./example/build/aurora/aurora-arm/debug/ru.auroraos.flutter_example_packages",
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
-            "miDebuggerServerAddress": "192.168.2.15:10001",
+            "miDebuggerServerAddress": "192.168.2.15:10003",
             "useExtendedRemote": true,
             "cwd": "${workspaceRoot}",
          }
