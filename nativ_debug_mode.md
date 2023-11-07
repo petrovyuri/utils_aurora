@@ -1,3 +1,5 @@
+### Часть 1, установка debug пакетов
+
 #### Клонируем проект flutter_plugins
 ```shell
 https://gitlab.com/omprussia/flutter/flutter-plugins
@@ -11,6 +13,36 @@ dart run build_runner build --delete-conflicting-outputs
 ```shell
 flutter-aurora build aurora --debug
 ```
+После сборки вам необходимо подписать все три пакета
+```shell
+aurora_psdk rpmsign-external sign --key $HOME/sign/regular_key.pem --cert  $HOME/sign/regular_cert.pem flutter-plugins/example/build/aurora/aurora-arm/debug/RPMS/*.rpm
+```
+Копируем все пакеты в смартфон
+```shell
+scp $HOME/flutter-plugins/example/build/aurora/aurora-arm/debug/RPMS/*.rpm defaultuser@192.168.2.15:/home/defaultuser/Downloads
+```
+#### Подключение к смартфону
+```shell
+ssh defaultuser@192.168.2.15
+```
+#### Переход в режим супер пользователя
+```shell
+devel-su
+```
+#### Установка всех пакетов из папки Downloads
+```shell
+pkcon install-local /home/defaultuser/Downloads/*.rpm -y
+```
+#### Выход из супер пользователя
+```shell
+exit    
+```
+#### Запускаем GDB Server
+```shell
+gdbserver --multi :10001    
+```
+
+### Часть 2, настройка внешнего отладчика
 
 #### Установка внешнего отладчика
 ## Почитать про отладчик
@@ -23,7 +55,7 @@ sudo apt install gdb-multiarch
 #### Создаем файл конфигурации 
 .gdbinit
 
-Добавляем туду команду: 
+Добавляем туда команду: 
 ```shell
 set remote exec-file /usr/bin/ru.auroraos.flutter_example_packages
 ```
@@ -51,28 +83,5 @@ https://marketplace.visualstudio.com/items?itemName=webfreak.debug
 }
 ```
 
-#### Копирование файлов
-```shell
-scp $HOME/ПУТЬ К файлам defaultuser@192.168.2.15:/home/defaultuser/Downloads
-```
-#### Подключение к смартфону
-```shell
-ssh defaultuser@192.168.2.15
-```
-#### Переход в режим супер пользователя
-```shell
-devel-su
-```
-#### Установка всех пакетов из папки Downloads
-```shell
-pkcon install-local /home/defaultuser/Downloads/*.rpm -y
-```
-#### Выход из супер пользователя
-```shell
-exit    
-```
-#### Запускаем GDB Server
-```shell
-gdbserver --multi :10000    
-```
+
 
