@@ -38,10 +38,7 @@ pkcon install-local /home/defaultuser/Downloads/*.rpm -y
 ```shell
 exit    
 ```
-#### Запускаем GDB Server
-```shell
-gdbserver --multi :10001    
-```
+
 
 ### Часть 2, настройка внешнего отладчика
 
@@ -84,6 +81,16 @@ set remote exec-file /usr/bin/ru.auroraos.flutter_example_packages
          }
     ]
 }
+```
+
+#### Подключение к смартфону
+```shell
+ssh defaultuser@192.168.2.15
+```
+
+#### Запускаем GDB Server
+```shell
+gdbserver --multi :10001    
 ```
 
 
