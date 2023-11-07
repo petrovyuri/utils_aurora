@@ -2,6 +2,11 @@
 ```shell
 https://gitlab.com/omprussia/flutter/flutter-plugins
 ```
+#### Переходим в папку example и запускаем кодогенерацию
+```shell
+cd example
+dart run build_runner build --delete-conflicting-outputs
+```
 
 #### Установка внешнего отладчика
 ## Почитать про отладчик
@@ -27,18 +32,18 @@ https://marketplace.visualstudio.com/items?itemName=webfreak.debug
 {
     "version": "0.2.0",
     "configurations": [
-            {
-                "name": "Attach with GDB",
-                "type": "cppdbg",
-                "request": "launch",
-                "program": "./УКАЗАТЬ ИСПОЛНЯЕМЫЙ ФАЙЛ",
-                "MIMode": "gdb",
-                "miDebuggerPath": "/usr/bin/gdb-multiarch",
-                "miDebuggerServerAddress": "192.168.2.15:10000",
-                "useExtendedRemote": true,
-                "cwd": "ПАПКА ПРОЕКТА",
-            }
-        ]
+        {
+            "name": "Attach with GDB",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "./УКАЗАТЬ ИСПОЛНЯЕМЫЙ ФАЙЛ",
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb-multiarch",
+            "miDebuggerServerAddress": "192.168.2.15:10000",
+            "useExtendedRemote": true,
+            "cwd": "ПАПКА ПРОЕКТА",
+         }
+    ]
 }
 ```
 #### Сборка приложения в режиме DEBUG
