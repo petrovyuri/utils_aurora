@@ -51,6 +51,11 @@ https://sourceware.org/gdb/papers/multi-arch/whatis.html
 ```shell
 sudo apt install gdb-multiarch
 ```
+#### Установка плагина С++
+https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools-extension-pack
+
+#### Установка плагина Native-Debug
+https://marketplace.visualstudio.com/items?itemName=webfreak.debug
 
 #### Создаем файл конфигурации 
 .gdbinit
@@ -59,9 +64,6 @@ sudo apt install gdb-multiarch
 ```shell
 set remote exec-file /usr/bin/ru.auroraos.flutter_example_packages
 ```
-
-#### Установка плагина Native-Debug
-https://marketplace.visualstudio.com/items?itemName=webfreak.debug
 
 #### Создаем файл конфигурации для запуска внешнего отладчика
 ```shell
@@ -72,12 +74,12 @@ https://marketplace.visualstudio.com/items?itemName=webfreak.debug
             "name": "Attach with GDB",
             "type": "cppdbg",
             "request": "launch",
-            "program": "./УКАЗАТЬ ИСПОЛНЯЕМЫЙ ФАЙЛ",
+            "program": "./example/build/aurora/aurora-arm/debug/ru.auroraos.flutter_example_packages",
             "MIMode": "gdb",
             "miDebuggerPath": "/usr/bin/gdb-multiarch",
-            "miDebuggerServerAddress": "192.168.2.15:10000",
+            "miDebuggerServerAddress": "192.168.2.15:10001",
             "useExtendedRemote": true,
-            "cwd": "ПАПКА ПРОЕКТА",
+            "cwd": "${workspaceRoot}",
          }
     ]
 }
