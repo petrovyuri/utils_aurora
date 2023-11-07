@@ -7,6 +7,10 @@ https://gitlab.com/omprussia/flutter/flutter-plugins
 cd example
 dart run build_runner build --delete-conflicting-outputs
 ```
+#### Сборка приложения в режиме DEBUG
+```shell
+flutter-aurora build aurora --debug
+```
 
 #### Установка внешнего отладчика
 ## Почитать про отладчик
@@ -46,10 +50,7 @@ https://marketplace.visualstudio.com/items?itemName=webfreak.debug
     ]
 }
 ```
-#### Сборка приложения в режиме DEBUG
-```shell
-flutter-aurora build aurora --debug
-```
+
 #### Копирование файлов
 ```shell
 scp $HOME/ПУТЬ К файлам defaultuser@192.168.2.15:/home/defaultuser/Downloads
