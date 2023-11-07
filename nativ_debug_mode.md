@@ -16,7 +16,7 @@ flutter-aurora build aurora --debug
 ```
 После сборки вам необходимо подписать все три пакета
 ```shell
-aurora_psdk rpmsign-external sign --key $HOME/sign/regular_key.pem --cert  $HOME/sign/regular_cert.pem flutter-plugins/example/build/aurora/aurora-arm/debug/RPMS/*.rpm
+aurora_psdk rpmsign-external sign --key $HOME/sign/regular_key.pem --cert  $HOME/sign/regular_cert.pem $HOME/flutter-plugins/example/build/aurora/aurora-arm/debug/RPMS/*.rpm
 ```
 Копируем все пакеты в смартфон
 ```shell
